@@ -1,0 +1,128 @@
+{
+  "MsFile": [
+    "F:/Huan_mouseBrain_MAX_IMAC_Energy_10_20_50cm4h_20210912_1_20210912232036.raw"
+  ],
+  "ProteinDatabase": "D:/数据/StrucGP-Mod/daima/feturn.fasta",
+  "B_ionsDatabase": "D:/数据/StrucGP-Mod/daima/branch_structures_19_20260602.xlsx",
+  "Threads": 6,
+  "HighEnergy": [
+    33
+  ],
+  "LowEnergy": 20,
+  "Label": null,
+  "MS1_mass_tolerance": 10,
+  "MS2_mass_tolerance": 20,
+  "Oxo_top_n": 20,
+  "Oxo_ess_n": 2,
+  "Oxo_ess_mz": "138.0550,204.0866",
+  "Oxo_noness_mz": "145.0495,163.0601,168.0655,186.0761,274.0927,292.1032,325.1135,366.14",
+  "Top_n": 300,
+  "VariableModification": "M,Oxidation,any",
+  "FixedModification": "C,Carbamidomethyl,any",
+  "min_pepfrag_number": 5,
+  "iTRAQ_reporters": "114.1112,115.1083,116.1116,117.1150",
+  "TMT_reporters": "126.127725,127.124760,127.131079,128.128114,128.134433,129.131468,129.137787,130.134822,130.141141,131.138176",
+  "missed_cleavage": 2,
+  "Peptide_FDR_cutoff": 0.01,
+  "Glycan_FDR_cutoff": 0.01,
+  "Protease": "Trypsin",
+  "Protease_terminal": "C-",
+  "Cleavage_sites": "KR",
+  "Search for special branches": true,
+  "Search for special branches with high energy": true,
+  "Search for special branches with low energy": true,
+  "Search for special branches with high and low energy": true,
+  "glycan_modification": [
+    {
+      "Name": "Phospho",
+      "Glycan_it_modify": "H",
+      "Modification_masses": 79.9663,
+      "Max_mod_per_glycan": 1,
+      "enabled": false
+    },
+    {
+      "Name": "Sulfo",
+      "Glycan_it_modify": "N",
+      "Modification_masses": 79.9568,
+      "Max_mod_per_glycan": 1,
+      "enabled": false
+    },
+    {
+      "Name": "OAc",
+      "Glycan_it_modify": "S",
+      "Modification_masses": 42.0106,
+      "Max_mod_per_glycan": 1,
+      "enabled": false
+    },
+    {
+      "Name": "OAc",
+      "Glycan_it_modify": "G",
+      "Modification_masses": 42.0106,
+      "Max_mod_per_glycan": 1,
+      "enabled": false
+    },
+    {
+      "Name": "Na",
+      "Glycan_it_modify": "H",
+      "Modification_masses": 21.9819,
+      "Max_mod_per_glycan": 1,
+      "enabled": false
+    },
+    {
+      "Name": "Al",
+      "Glycan_it_modify": "H",
+      "Modification_masses": 23.958,
+      "Max_mod_per_glycan": 1,
+      "enabled": false
+    },
+    {
+      "Name": "Fe",
+      "Glycan_it_modify": "N",
+      "Modification_masses": 52.91,
+      "Max_mod_per_glycan": 1,
+      "enabled": false
+    },
+    {
+      "Name": "Fo",
+      "Glycan_it_modify": "N",
+      "Modification_masses": 27.995,
+      "Max_mod_per_glycan": 1,
+      "enabled": false
+    },
+    {
+      "Name": "GlcA",
+      "Glycan_it_modify": "H",
+      "Modification_masses": 176.032,
+      "Max_mod_per_glycan": 1,
+      "enabled": false
+    },
+    {
+      "Name": "Kdn",
+      "Glycan_it_modify": "H",
+      "Modification_masses": 250.0689,
+      "Max_mod_per_glycan": 1,
+      "enabled": true
+    },
+    {
+      "Name": "Kdn",
+      "Glycan_it_modify": "N",
+      "Modification_masses": 250.0689,
+      "Max_mod_per_glycan": 1,
+      "enabled": true
+    },
+    {
+      "Name": "Me",
+      "Glycan_it_modify": "H",
+      "Modification_masses": 14.0157,
+      "Max_mod_per_glycan": 1,
+      "enabled": false
+    },
+    {
+      "Name": "Pent",
+      "Glycan_it_modify": "H",
+      "Modification_masses": 132.0423,
+      "Max_mod_per_glycan": 1,
+      "enabled": false
+    }
+  ]
+}
