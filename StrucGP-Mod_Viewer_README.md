@@ -13,7 +13,6 @@ The **Parameters Setting** dialog is used to configure glycan drawing parameters
 
 ![parameters_setting.png](docs/images/parameters_setting.png)
 
-> Replace `docs/images/parameters_setting.png` with the actual path of the screenshot in your repository.
 
 ### Opening the dialog
 
