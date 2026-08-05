@@ -1,0 +1,15 @@
+{
+  "MsFile": [
+    "E:/sperm-36raw/Sperm_cotton_fraction3_IGP2_Xin_20210206.raw"
+  ],
+  "HighEnergy": [
+    33
+  ],
+  "LowEnergy": 20,
+  "MS1_mass_tolerance": 10,
+  "MS2_mass_tolerance": 20,
+  "Top_n": 300,
+  "Oxo_top_n": 20,
+  "Oxo_ess_n": 2,
+  "Oxo_ess_mz": "138.0550,204.0866"
+}
