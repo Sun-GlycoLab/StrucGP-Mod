@@ -1,5 +1,4 @@
 # StrucGP-Mod
-StrucGP-Mod is an automated two-stage tool for screening and identifying glycan modifications. It traces monosaccharide-loss paths from diagnostic B ions and uses KDE calibration to discover rare glycan features without databases, then identifies dozens of predefined modifications using characteristic fragments and stratified FDR control.
 
 ## Overview
 
@@ -15,7 +14,7 @@ StrucGP-Mod is designed for screening potential glycan modifications and subsequ
 ### Operating system and software
 
 - **Windows:** Run the graphical interface through `main_window.exe`.
-- **Linux:** Run the command-line version through `main_linux.py` in the Python environment supplied or specified with the software package.
+- **Linux:** Run the command-line version through `main_linux` in the Python environment supplied or specified with the software package.
 
 ### Hardware
 
@@ -29,57 +28,41 @@ No conventional installation is required. Extract the software package and run `
 
 ### Linux
 
-Extract the software package, activate the required Python environment, and run `main_linux.py` from the program directory.
+Activate the Python environment, and run `main_linux` from the program directory.
 
 Keep the license file in the program directory, or provide its path explicitly when starting the program.
 
 ## How to acquire and activate a StrucGP-Mod license
 
-1. Obtain the physical address (MAC address) of the computer on which StrucGP-Mod will be used.
+1\. You can input 'ipconfig/all' in your command prompt window(CMD) on Windows platform. Under "Ethernet adapter" you may find a string consisting of 12 hexadecimal digits after the "Physical Address", which is your device's media access control address(MAC Address).
 
-   On Windows, open Command Prompt and run:
+2\. After getting your MAC address, you need to copy it next to "MAC" between the "####" chars.
 
-   ```text
-   ipconfig /all
-   ```
+3\. Besides, in order to get closer contact with users. You need to fill all below items between the "####" chars. You can just send this README txt file to sun\_glycolab@126.com after finish it and we will provide StrucOGP license to you as soon as possible.
 
-   Under the active network adapter, locate the 12-character hexadecimal value shown after **Physical Address**.
+4\. You will find a LIC file named StrucGP-Mod\_license in our reply. Please put it in the same folder as the main.exe. The wrong path or license file may cause failure when you start program.
 
-   On Linux, run:
+5\. StrucGP-Mod is available freely for academic research, non-commercial or educational purposes under academic license.
 
-   ```bash
-   ip link
-   ```
+6\. If there are any other errors when you activate or use StrucGP-Mod, Please contact with us via sun\_glycolab@126.com.
 
-2. Copy the MAC address and complete the user-information form below.
-
-3. Send the completed information to `sun_glycolab@126.com`. A StrucGP-Mod license file will be provided after the request is processed.
-
-4. Save the returned license file as `StrucGP-Mod_license.lic`. For the Windows version, place it in the same directory as `main_window.exe`. For the Linux version, place it in the program directory or pass its path with `--license`.
-
-5. StrucGP-Mod is freely available under an academic license for academic research, non-commercial use, and educational purposes.
-
-6. If license activation fails, verify both the license filename and its path. For further assistance, contact `sun_glycolab@126.com`.
-
-```text
-#####################################################################
+\#####################################################################
 
 MAC:
 
-User name:
+User Name:
 
-Email address:
+Your e-mail address:
 
-University or organization:
+University or Organization name:
 
-Country or region:
+Country or Region:
 
-Principal investigator or supervisor:
+Your Leader or Supervisor:
 
-Principal investigator's or supervisor's email:
+Your leader's e-mail:
 
-#####################################################################
-```
+\#####################################################################
 
 ## Instructions for use
 
@@ -92,19 +75,24 @@ StrucGP-Mod contains two workflows:
 
 1. Run `main_window.exe`. The graphical interface and a command console will open.
 
-2. In **Step 1**, select the following input files:
+2. In **Database**, select the following input files. For detailed information, refer to Figure Step 1:
 
-   - MS data file, for example `test.raw`
-   - protein sequence database, for example `fetuin.fasta`
-   - glycan branch database, for example `19.xlsx`
+   - MS files directory, for example `test.raw`
+   - Protein database directory, for example `fetuin.fasta`
+   - Glycan branch structure database directory, for example `19.xlsx`
 
-3. In **Step 2**, configure the general search parameters according to the experimental data.
+3. In **Parameter**, configure the general search parameters according to the experimental data. For detailed information, refer to Figure Step 2.
 
-4. In **Step 3**, select the glycan modifications to be identified. If a required modification is not listed, add it by specifying its name, target monosaccharide, and monoisotopic mass. After configuration, click **Save `param.json`** in the lower-right corner.
+4. In **Glycan Modifications**, select the glycan modifications to be identified. If a required modification is not listed, add it by specifying its name, attachment site of monosaccharide, and modification mass. After configuration, click **Save `param.json`** in the lower-right corner. For detailed information, refer to Figure Step 3.
 
-5. In **Step 4**, configure the remaining identification parameters and start the identification workflow.
+5. In **Running**, configure the remaining identification parameters and click "Run Analysis" to start the identification workflow For detailed information, refer to Figure Step 4.
 
-6. To run the screening workflow instead, set all glycan modifications in Step 3 to `False`, return to Step 1, and click the screening button at the bottom of the page.
+6. To run the screening workflow instead, set all glycan modifications in **Glycan Modifications** to `false`, return to **Database**, and click "Checking" at the bottom of the page.
+
+![Step 1.png](../windows/docs/images/Step%201.png)
+![Step 2.png](../windows/docs/images/Step%202.png)
+![Step 3.png](../windows/docs/images/Step%203.png)
+![Step 4.png](../windows/docs/images/Step%204.png)
 
 ### Linux version
 
@@ -124,21 +112,43 @@ The Linux version is operated from the command line. The same command-line workf
    | `Label` | Quantification label; use `null` for no label or, for example, `"TMT10plex"` for TMT10 |
    | `glycan_modification` | Must be an empty list (`[]`) in screening mode |
 
-2. Keep the remaining search parameters consistent with the experimental method. A minimal excerpt is shown below; the complete distributed parameter file contains additional required settings.
+2. Keep the remaining search parameters consistent with the experimental method. A excerpt is shown below; the complete distributed parameter file contains additional required settings.
 
    ```json
    {
      "MsFile": [
-       "/path/to/test.raw"
+       "D:\\test\\test.npz"
      ],
-     "ProteinDatabase": "/path/to/fetuin.fasta",
-     "B_ionsDatabase": "/path/to/19.xlsx",
+     "ProteinDatabase": "D:\\test\\Mouse_reviewed_2026_07_03.fasta",
+     "B_ionsDatabase": "D:\\test\\branch_structures_19_20260602.xlsx",
      "Threads": 1,
      "HighEnergy": [
        33
      ],
      "LowEnergy": 20,
      "Label": null,
+     "MS1_mass_tolerance": 10,
+     "MS2_mass_tolerance": 20,
+     "Oxo_top_n": 20,
+     "Oxo_ess_n": 2,
+     "Oxo_ess_mz": "138.0550,204.0866",
+     "Oxo_noness_mz": "145.0495,163.0601,168.0655,186.0761,274.0927,292.1032,325.1135,366.14",
+     "Top_n": 300,
+     "VariableModification": "M,Oxidation,any",
+     "FixedModification": "C,Carbamidomethyl,any",
+     "min_pepfrag_number": 5,
+     "iTRAQ_reporters": "114.1112,115.1083,116.1116,117.1150",
+     "TMT_reporters": "126.127725,127.124760,127.131079,128.128114,128.134433,129.131468,129.137787,130.134822,130.141141,131.138176",
+     "missed_cleavage": 2,
+     "Peptide_FDR_cutoff": 0.01,
+     "Glycan_FDR_cutoff": 0.01,
+     "Protease": "Trypsin",
+     "Protease_terminal": "C-",
+     "Cleavage_sites": "KR",
+     "Search for special branches": true,
+     "Search for special branches with high energy": true,
+     "Search for special branches with low energy": true,
+     "Search for special branches with high and low energy": true,
      "glycan_modification": []
    }
    ```
@@ -146,29 +156,26 @@ The Linux version is operated from the command line. The same command-line workf
 3. Start the screening workflow:
 
    ```bash
-   python main_linux.py \
-     --license ./StrucGP-Mod_license.lic \
-     --check \
-     --check-param parameter.json
+   python main_linux --license ./StrucGP-Mod_license.lic --check --check-param ./parameter.json
    ```
 
 The filename passed to `--check-param` must exactly match the parameter filename, including letter case on Linux.
 
 #### Identification mode
 
-1. Open `Param.json` and update the MS-data path, protein database, glycan branch database, collision energies, labeling method, and other search parameters.
+1. Open `param.json` and update the MS-data path, protein database, glycan branch database, collision energies, labeling method, and other search parameters. To avoid potential compatibility and deployment issues with vendor-specific RAW-file reading dependencies in CentOS-based HPC environment, first convert the RAW files to NPZ format on a Windows computer using our in-house mainnpz.exe utility. Then transfer the resulting NPZ files to the HPC system and specify their paths as the MS-data input for StrucGP-Mod analysis. Detailed step-by-step instructions are provided in the READMENPZ.md file.
 
 2. Set `Threads` to the number of CPU cores that the program may use.
 
 3. Configure `glycan_modification`. The number of modification types is not limited by the workflow. Each modification entry uses the following fields:
 
-   | Field | Description |
-   | --- | --- |
-   | `Name` | Modification name; English letters and numbers are supported |
-   | `Glycan_it_modify` | Monosaccharide site or sites on which the modification can occur; follow the multi-site syntax used by the O-acetylation example in the distributed `Param.json` |
-   | `Modification_masses` | Monoisotopic mass shift of the modification |
-   | `Max_mod_per_glycan` | Maximum number of this modification allowed on one glycan |
-   | `enabled` | `true` includes the modification in identification; `false` excludes it |
+   | Field | Description                                                                                                                                                            |
+   | --- |------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+   | `Name` | Modification name; English letters and numbers are supported                                                                                                           |
+   | `Glycan_it_modify` | Monosaccharide site or sites on which the modification can occur; follow the multi-site syntax used by the O-acetylation (OAc) example in the distributed `Param.json` |
+   | `Modification_masses` | Masses of the special modifications or rare monosaccharides                                                                                                            |
+   | `Max_mod_per_glycan` | Maximum number of this modification allowed on one glycan                                                                                                              |
+   | `enabled` | `true` includes the modification in identification; `false` excludes it                                                                                                |
 
 4. The example below enables phosphorylation and leaves the sodium-adduct entry disabled:
 
@@ -183,9 +190,16 @@ The filename passed to `--check-param` must exactly match the parameter filename
          "enabled": true
        },
        {
-         "Name": "Na",
-         "Glycan_it_modify": "H",
-         "Modification_masses": 21.9819,
+         "Name": "OAc",
+         "Glycan_it_modify": "S",
+         "Modification_masses": 42.0106,
+         "Max_mod_per_glycan": 1,
+         "enabled": false
+       },
+       {
+         "Name": "OAc",
+         "Glycan_it_modify": "G",
+         "Modification_masses": 42.0106,
          "Max_mod_per_glycan": 1,
          "enabled": false
        }
@@ -193,15 +207,15 @@ The filename passed to `--check-param` must exactly match the parameter filename
    }
    ```
 
-5. The distributed parameter file contains 12 common modification presets, which are disabled by default. Change only the desired entries to `true`. If every entry is `false`, StrucGP-Mod performs a conventional identification without considering glycan modifications.
+5. The parameter file contains 12 common modification presets, which are disabled by default. Change only the desired entries to `true`. If every entry is `false`, StrucGP-Mod performs a conventional identification without considering glycan modifications.
 
-6. Save the completed file as `Param.json` in the location expected by the program, and start the identification workflow:
+6. Save the completed file as `param.json` in the location expected by the program, and start the identification workflow:
 
    ```bash
-   python main_linux.py --license ./StrucGP-Mod_license.lic
+   python main_linux --license ./StrucGP-Mod_license.lic --param ./param.json
    ```
 
-   The supplied guide treats `Param.json` as the default identification configuration and does not specify a separate identification-mode parameter flag. If your software build uses an explicit parameter-file option, confirm the supported syntax with `python main_linux.py --help`.
+   The supplied guide treats `param.json` as the default identification configuration and does not specify a separate identification-mode parameter flag. If your software build uses an explicit parameter-file option, confirm the supported syntax with `python main_linux.py --help`.
 
 ## Important parameter notes
 
@@ -209,13 +223,11 @@ The filename passed to `--check-param` must exactly match the parameter filename
 - `Threads` specifies the number of CPU cores used in the Linux identification workflow.
 - `HighEnergy` and `LowEnergy` must match the collision-energy settings used to acquire the MS data.
 - `MS1_mass_tolerance` and `MS2_mass_tolerance` control precursor- and fragment-mass tolerances, respectively.
-- `Oxo_top_n`, `Oxo_ess_n`, `Oxo_ess_mz`, and `Oxo_noness_mz` control oxonium-ion-based spectrum filtering.
-- `Top_n` specifies the number of high-energy spectral peaks retained for subsequent identification.
 - `VariableModification` and `FixedModification` define peptide modifications.
 - `Peptide_FDR_cutoff` and `Glycan_FDR_cutoff` control peptide- and glycan-level false-discovery-rate thresholds.
 - `Protease`, `Protease_terminal`, `Cleavage_sites`, and `missed_cleavage` define protein digestion rules.
 - In screening mode, do not add any entries to `glycan_modification`.
-- In identification mode, custom modifications must follow the exact field names, capitalization, value types, and punctuation used in the distributed JSON file.
+- In identification mode, custom modifications must follow the exact field names, value types, and punctuation used in the distributed JSON file.
 
 ## Demo
 
@@ -226,15 +238,46 @@ The filename passed to `--check-param` must exactly match the parameter filename
 3. Complete the parameter settings described above.
 4. Choose screening or identification mode and start the analysis.
 
-### Linux screening demo
+### Linux Screening demo
 
-1. Copy the distributed parameter template and set `MsFile`, `ProteinDatabase`, and `B_ionsDatabase` to the paths of the demo files.
+1. Copy or Click the `parameter.json` file and modify `MsFile`, `ProteinDatabase`, and `B_ionsDatabase` to specify the paths of the demo files.
 2. Set `glycan_modification` to `[]`.
 3. Run the screening command shown above.
 
-### Expected output
+### Linux Identifying demo
 
-Progress information is displayed in the console during processing. Result and intermediate files are written to the configured output or MS-data directory, depending on the software build. Consult the release package for the exact output filenames associated with screening and identification modes.
+1. Copy or Click the `param.json` file and modify `MsFile`, `ProteinDatabase`, and `B_ionsDatabase` to specify the paths of the demo files.
+2. Configure the desired modifications in `glycan_modification` by following the steps described above.
+3. Run the identifying command shown above.
+
+### Expected output
+Windows:
+
+Screening Mode:
+
+test_nuclear_density_analysis_result.xlsx (result file) and test_possible_ions_and_all_paths (result file), are saved in the directory of test.raw.
+
+test_raw.pkl is the file generated after spectrum reading and preprocessing of the raw file.
+
+Identifying Mode:
+
+test_result.xlsx (result file), test.csv (file used for visualization) and test_result_AllSpectra.xlsx (log file), are saved in the directory of test.raw.
+
+test_raw.pkl is the file generated after spectrum reading and preprocessing of the raw file.
+
+Linux:
+
+Screening Mode:
+
+test_nuclear_density_analysis_result.xlsx (result file) and test_possible_ions_and_all_paths (result file), are saved in the directory of test.npz.
+
+test_raw.npz is the file generated after spectrum reading and preprocessing of the raw file.
+
+Identifying Mode:
+
+test_result.xlsx (result file), test.csv (file used for visualization) and test_result_AllSpectra.xlsx (log file), are saved in the directory of test.npz.
+
+test_raw.npz is the file generated after spectrum reading and preprocessing of the raw file.
 
 ## Notes
 
