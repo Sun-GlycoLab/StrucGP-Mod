@@ -89,10 +89,10 @@ StrucGP-Mod contains two workflows:
 
 6. To run the screening workflow instead, set all glycan modifications in **Glycan Modifications** to `false`, return to **Database**, and click "Checking" at the bottom of the page.
 
-![Step 1.png](../windows/docs/images/Step%201.png)
-![Step 2.png](../windows/docs/images/Step%202.png)
-![Step 3.png](../windows/docs/images/Step%203.png)
-![Step 4.png](../windows/docs/images/Step%204.png)
+![Step 1.png](docs/images/Step%201.png)
+![Step 2.png](docs/images/Step%202.png)
+![Step 3.png](docs/images/Step%203.png)
+![Step 4.png](docs/images/Step%204.png)
 
 ### Linux version
 
