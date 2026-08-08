@@ -13,7 +13,7 @@ StrucGP-Mod is designed for screening potential glycan modifications and subsequ
 
 ### Operating system and software
 
-- **Windows:** Run the graphical interface through `main_window.exe`.
+- **Windows:** Run the graphical interface through `StrucGP-Mod-Windows.exe`.
 - **Linux:** Run the command-line version through `main_linux` in the Python environment supplied or specified with the software package.
 
 ### Hardware
@@ -73,7 +73,7 @@ StrucGP-Mod contains two workflows:
 
 ### Windows version
 
-1. Run `main_window.exe`. The graphical interface and a command console will open.
+1. Run `StrucGP-Mod-Windows.exe`. The graphical interface and a command console will open.
 
 2. In **Database**, select the following input files. For detailed information, refer to Figure Step 1:
 
@@ -233,7 +233,7 @@ The filename passed to `--check-param` must exactly match the parameter filename
 
 ### Windows demo
 
-1. Run `main_window.exe`.
+1. Run `StrucGP-Mod-Windows.exe`.
 2. In Step 1, select `test.raw`, the supplied fetuin FASTA file, and the supplied `19.xlsx` glycan branch database.
 3. Complete the parameter settings described above.
 4. Choose screening or identification mode and start the analysis.
