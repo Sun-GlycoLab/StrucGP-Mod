@@ -24,7 +24,7 @@ Hardware requirements depend on the size and number of MS files. For large datas
 
 ### Windows
 
-No conventional installation is required. Extract the software package and run `main_window.exe`.
+No conventional installation is required. Extract the software package and run `StrucGP-Mod-Windows.exe`.
 
 ### Linux
 
