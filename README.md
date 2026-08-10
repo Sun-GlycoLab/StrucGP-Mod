@@ -156,7 +156,7 @@ The Linux version is operated from the command line. The same command-line workf
 3. Start the screening workflow:
 
    ```bash
-   python main_linux --license ./StrucGP-Mod_license.lic --check --check-param ./parameter.json
+   ./main --license ./StrucGP-Mod_license.lic --check --check-param ./parameter.json
    ```
 
 The filename passed to `--check-param` must exactly match the parameter filename, including letter case on Linux.
@@ -212,7 +212,7 @@ The filename passed to `--check-param` must exactly match the parameter filename
 6. Save the completed file as `param.json` in the location expected by the program, and start the identification workflow:
 
    ```bash
-   python main_linux --license ./StrucGP-Mod_license.lic --param ./param.json
+   ./main --license ./StrucGP-Mod_license.lic --param ./param.json
    ```
 
    The supplied guide treats `param.json` as the default identification configuration and does not specify a separate identification-mode parameter flag. If your software build uses an explicit parameter-file option, confirm the supported syntax with `python main_linux.py --help`.
